@@ -2,14 +2,32 @@
   <img [src]="product.image" alt="Product thumbnail" />
   <h2 class="title">{{ product.name }}</h2>
 
-  <div class="row">
+  <div class="row gap-05">
     <span class="price-lablel">Price:</span>
     <span class="price">{{ product.price }}</span>
   </div>
 
   <p-rating
-      [(ngModel)]="product.rating"
-      [readonly]="true"
-      iconCancelClass="hidden">
+    [(ngModel)]="product.rating"
+    [readonly]="true"
+    iconCancelClass="hidden"
+  >
   </p-rating>
+
+  <div class="row">
+    <button
+      type="button"
+      pButton
+      label="pi pi-pencil"
+      (click)="editProduct()"
+      label="Edit"
+    ></button>
+    <button
+      type="button"
+      pButton
+      label="pi pi-trash"
+      (click)="deleteProduct()"
+      label="Delete"
+    ></button>
+  </div>
 </div>
