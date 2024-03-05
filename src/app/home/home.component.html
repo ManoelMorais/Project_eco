@@ -22,20 +22,19 @@
     [totalRecords]="totalRecords"
     [rowsPerPageOptions]="[5, 10, 20]"
     (onPageChange)="onPageChange($event)"
+    #paginator
   ></p-paginator>
 </div>
 
 <!-- Edit Product -->
 <app-edit-popup
   [product]="selectedProduct"
-  [(display)]="displayEditPopup"
   (confirm)="onConfirmEdit($event)"
   header="Edit Product"
 ></app-edit-popup>
 
 <!-- Add Product -->
 <app-edit-popup
-  [(display)]="displayAddPopup"
   (confirm)="onConfirmAdd($event)"
   header="Add Product"
 ></app-edit-popup>

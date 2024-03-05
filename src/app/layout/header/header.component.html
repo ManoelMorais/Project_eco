@@ -1,3 +1,7 @@
-<header class="wrapper row full-center">
-  <img src="assets/fav/oc-logo.svg" alt="logo image" class="logo">
+<header class="wrapper column full-center">
+  <img src="assets/fav/oc-logo.svg" alt="logo image" class="logo" />
+  <div class="row gap-1">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a>
+    <a routerLink="/about-us" routerLinkActive="active" >About</a>
+  </div>
 </header>

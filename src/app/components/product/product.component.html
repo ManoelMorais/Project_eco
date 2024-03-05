@@ -1,20 +1,21 @@
 <div class="column gap-1 wrapper">
   <img [src]="product.image" alt="Product thumbnail" />
-  <h2 class="title">{{ product.name }}</h2>
+  <h2 class="title">{{ product.name | trucateName: 16 : "..." }}</h2>
 
   <div class="row gap-05">
     <span class="price-lablel">Price:</span>
-    <span class="price">{{ product.price }}</span>
+    <span class="price">{{ product.price | price }}</span>
   </div>
 
   <p-rating
     [(ngModel)]="product.rating"
+    [ngModelOptions]="{ standalone: true }"
     [readonly]="true"
     iconCancelClass="hidden"
   >
   </p-rating>
 
-  <div class="row">
+  <div class="row gap-05">
     <button
       type="button"
       pButton
@@ -28,6 +29,10 @@
       label="pi pi-trash"
       (click)="deleteProduct()"
       label="Delete"
+      class="p-button-danger"
+      #deleteButton
     ></button>
   </div>
 </div>
+
+<p-confirmPopup></p-confirmPopup>
